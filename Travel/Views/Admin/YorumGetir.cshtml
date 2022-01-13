@@ -1,0 +1,29 @@
+﻿@using Travel.Models.Sınıflar
+@model List<Yorumlar>
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayaout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kullanıcı Ad Soyad</th>
+        <th>Mail</th>
+        <th>Yorum</th>
+        <th>Blog</th>
+        <th>Sil</th>
+    </tr>
+    @foreach(var x in Model)
+    {
+    <tr>
+        <td>@x.ID</td>
+        <td>@x.KullaniciAdi</td>
+        <td>@x.Mail</td>
+        <td>@x.Yorum</td>
+        <td>@x.Blog.Baslik</td>
+        <td><a href="/admin/YorumSil/@x.ID" class="btn btn-danger" onclick="return confirm('Silmek İstediğinizden Emin misiniz ?')" >Sil</a></td>
+    </tr>
+    }
+</table>
+

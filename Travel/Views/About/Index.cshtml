@@ -1,0 +1,21 @@
+﻿@using Travel.Models.Sınıflar
+@model List<Hakkimizda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h2 style="margin-left:350px;">Ben Kimim ?</h2>
+            @foreach (var x in Model)
+            {<img src="@x.FotoUrl" alt="" style="margin-left:240px;" />
+                <p>@x.Aciklama</p>
+            }
+        </div>
+    </div>
+</div>
+
+
+
